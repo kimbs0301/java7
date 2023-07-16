@@ -22,8 +22,8 @@ public class Main {
 		try {
 			ssc = ServerSocketChannel.open();
 			ssc.configureBlocking(false);
-			ssc.setOption(StandardSocketOptions.SO_REUSEADDR, false);
-			ssc.setOption(StandardSocketOptions.SO_RCVBUF, 0);
+			//ssc.setOption(StandardSocketOptions.SO_REUSEADDR, false);
+			ssc.setOption(StandardSocketOptions.SO_RCVBUF, 1024 * 8);
 
 			System.out.println("server " + ip + ":" + port);
 			ServerSocket ss = ssc.socket();
