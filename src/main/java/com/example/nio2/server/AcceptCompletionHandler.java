@@ -38,7 +38,7 @@ public class AcceptCompletionHandler implements
 	private void registerHandler(AsynchronousSocketChannel channel) {
 		try {
 			channel.setOption(StandardSocketOptions.SO_REUSEADDR, false);
-			channel.setOption(StandardSocketOptions.TCP_NODELAY, false);
+			channel.setOption(StandardSocketOptions.TCP_NODELAY, true);
 			channel.setOption(StandardSocketOptions.SO_KEEPALIVE, false);
 			channel.setOption(StandardSocketOptions.SO_SNDBUF, 1024 * 4);
 			channel.setOption(StandardSocketOptions.SO_RCVBUF, 1024 * 4);
