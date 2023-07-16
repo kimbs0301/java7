@@ -25,8 +25,8 @@ public class Main {
 							false, Thread.NORM_PRIORITY));
 			AsynchronousServerSocketChannel listener = AsynchronousServerSocketChannel
 					.open(channelGroup);
-			listener.setOption(StandardSocketOptions.SO_REUSEADDR, false);
-			listener.setOption(StandardSocketOptions.SO_RCVBUF, 0);
+			//listener.setOption(StandardSocketOptions.SO_REUSEADDR, false);
+			listener.setOption(StandardSocketOptions.SO_RCVBUF, 1024 * 8);
 
 			AsyncServerBootstrap asyncServerBootstrap = new AsyncServerBootstrap();
 			asyncServerBootstrap.group(channelGroup, listener);
